@@ -1,0 +1,66 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <h1>Amg Expertise</h1>
+      <p class="tagline">Expertise Automobile</p>
+    </div>
+
+    <nav class="nav-desktop">
+      <ul>
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            >ACCUEIL</a
+          >
+        </li>
+        <li><a routerLink="/presentation" routerLinkActive="active">À PROPOS</a></li>
+        <li><a routerLink="/nos-services" routerLinkActive="active">NOS SERVICES</a></li>
+        <li><a routerLink="/nos-bureaux" routerLinkActive="active">NOS BUREAUX</a></li>
+        <li><a routerLink="/nous-choisir" routerLinkActive="active">NOUS CHOISIR</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="nav-mobile" [class.open]="isMobileMenuOpen()">
+    <ul>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMobileMenu()"
+          >ACCUEIL</a
+        >
+      </li>
+      <li>
+        <a routerLink="/presentation" routerLinkActive="active" (click)="closeMobileMenu()"
+          >À PROPOS</a
+        >
+      </li>
+      <li>
+        <a routerLink="/nos-services" routerLinkActive="active" (click)="closeMobileMenu()"
+          >NOS SERVICES</a
+        >
+      </li>
+      <li>
+        <a routerLink="/nos-bureaux" routerLinkActive="active" (click)="closeMobileMenu()"
+          >NOS BUREAUX</a
+        >
+      </li>
+      <li>
+        <a routerLink="/nous-choisir" routerLinkActive="active" (click)="closeMobileMenu()"
+          >NOUS CHOISIR</a
+        >
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+</header>

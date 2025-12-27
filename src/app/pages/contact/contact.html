@@ -1,0 +1,127 @@
+<div class="page-container">
+  <div class="page-header">
+    <h1>Nous Contacter</h1>
+    <p>Une question? Contactez-nous!</p>
+  </div>
+
+  <div class="page-content">
+    <div class="contact-wrapper">
+      <section class="contact-form-section">
+        <h2>Formulaire de contact</h2>
+        <form class="contact-form" (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="name">Nom complet *</label>
+            <input 
+              type="text" 
+              id="name" 
+              [(ngModel)]="formData.name" 
+              name="name"
+              required
+              placeholder="Votre nom"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              [(ngModel)]="formData.email" 
+              name="email"
+              required
+              placeholder="votre@email.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Téléphone *</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              [(ngModel)]="formData.phone" 
+              name="phone"
+              required
+              placeholder="06 XX XX XX XX"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Sujet *</label>
+            <input 
+              type="text" 
+              id="subject" 
+              [(ngModel)]="formData.subject" 
+              name="subject"
+              required
+              placeholder="Objet de votre demande"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea 
+              id="message" 
+              [(ngModel)]="formData.message" 
+              name="message"
+              required
+              placeholder="Décrivez votre demande en détail..."
+              rows="6"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">Envoyer le message</button>
+        </form>
+      </section>
+
+      <section class="contact-info-section">
+        <h2>Informations de contact</h2>
+        
+        <div class="info-card">
+          <h4>📞 Par téléphone</h4>
+          <p>Appelez-nous directement pour une consultation rapide</p>
+          <p class="info-value">Numéro à afficher</p>
+        </div>
+
+        <div class="info-card">
+          <h4>📧 Par email</h4>
+          <p>Envoyez votre demande d'expertise</p>
+          <p class="info-value">Email à afficher</p>
+        </div>
+
+        <div class="info-card">
+          <h4>🏢 Adresse</h4>
+          <p>Visitez-nous dans l'un de nos bureaux</p>
+          <p class="info-value">Adresse à afficher</p>
+        </div>
+
+        <div class="info-card">
+          <h4>⏰ Horaires</h4>
+          <p>Lundi au vendredi: 8h00 - 18h00</p>
+          <p>Samedi: Sur rendez-vous</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="faq-section">
+      <h2>Questions fréquemment posées</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>Combien de temps pour une expertise?</h4>
+          <p>Une expertise standard prend généralement entre 1 et 3 heures selon la complexité.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Pouvez-vous vous déplacer?</h4>
+          <p>Oui, nous nous déplaçons dans tous nos zones de couverture pour les expertises sur site.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Quel est le tarif?</h4>
+          <p>Les tarifs dépendent du type d'expertise. Contactez-nous pour un devis gratuit.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Avez-vous une garantie?</h4>
+          <p>Nos rapports d'expertise sont reconnus et acceptés par toutes les assurances.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
