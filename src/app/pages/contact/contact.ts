@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './contact.html',
-  styleUrl: './contact.scss'
+  styleUrl: './contact.scss',
 })
 export class ContactComponent {
   formData = {
@@ -13,7 +14,7 @@ export class ContactComponent {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
   };
 
   submitForm(): void {
@@ -29,7 +30,7 @@ export class ContactComponent {
       email: '',
       phone: '',
       subject: '',
-      message: ''
+      message: '',
     };
   }
 }

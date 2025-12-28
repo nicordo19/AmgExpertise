@@ -116,6 +116,9 @@
   cursor: pointer;
   transition: var(--transition);
   letter-spacing: 0.5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 
   &:hover {
     background-color: #a00824;
