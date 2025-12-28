@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AMG Expertise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>AMG Expertise</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <h2>Demander une Expertise</h2>
+            
+            <form class="contact-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Type d'expertise *</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Sélectionnez un service --</option>
+                        <option value="achat">Expertise avant achat</option>
+                        <option value="sinistre">Expertise après sinistre</option>
+                        <option value="vente">Expertise avant vente</option>
+                        <option value="litige">Expertise litige</option>
+                        <option value="diagnostic">Diagnostic technique</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicle">Informations du véhicule</label>
+                    <input type="text" id="vehicle" name="vehicle" placeholder="Marque, modèle, année">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Description de votre demande *</label>
+                    <textarea id="message" name="message" required placeholder="Décrivez votre besoin en quelques mots..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Localisation du véhicule</label>
+                    <input type="text" id="location" name="location" placeholder="Ville ou code postal">
+                </div>
+
+                <button type="submit" class="submit-button">Envoyer la demande</button>
+            </form>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="margin-bottom: 1rem; color: #1a1a2e;">Autres moyens de nous contacter</h3>
+                <p style="color: #666; margin: 0.5rem 0;">📞 Téléphone : 01 23 45 67 89</p>
+                <p style="color: #666; margin: 0.5rem 0;">✉️ Email : contact@amg-expertise.fr</p>
+                <p style="color: #666; margin: 0.5rem 0;">⏰ Horaires : Lundi - Vendredi, 9h - 18h</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 AMG Expertise - Tous droits réservés</p>
+            <p>Expert automobile indépendant</p>
+        </div>
+    </footer>
+</body>
+</html>
