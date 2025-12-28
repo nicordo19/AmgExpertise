@@ -1,13 +1,18 @@
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-section">
-      <h3>AMG AEC</h3>
+    <!-- Section Présentation -->
+    <div class="footer-section footer-about">
+      <h3 class="footer-title">AMG AEC</h3>
       <p>Expertise automobile spécialisée dans l'Est de la France et le Luxembourg depuis 2004.</p>
+      <div class="footer-cta">
+        <a routerLink="/contact" class="btn-footer">Nous contacter</a>
+      </div>
     </div>
-    
+
+    <!-- Section Zones de couverture -->
     <div class="footer-section">
-      <h4>Zones de couverture</h4>
-      <ul>
+      <h4>Nos bureaux</h4>
+      <ul class="footer-list">
         <li>Moselle</li>
         <li>Meuse</li>
         <li>Bas Rhin</li>
@@ -17,19 +22,41 @@
         <li>Luxembourg</li>
       </ul>
     </div>
-    
+
+    <!-- Section Services -->
     <div class="footer-section">
-      <h4>Nos axes principaux</h4>
-      <ul>
+      <h4>Nos services</h4>
+      <ul class="footer-list">
         <li>Assistance à expertise technique</li>
         <li>Expertise de dommage</li>
         <li>Aide à l'achat/vente</li>
         <li>Protection juridique</li>
       </ul>
     </div>
+
+    <!-- Section Contact -->
+    <div class="footer-section footer-contact">
+      <h4>Contactez-nous</h4>
+      <div class="contact-item">
+        <span class="contact-icon"></span>
+        <a href="tel:+33123456789">+33 (0)1 23 45 67 89</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon"></span>
+        <a href="mailto:contact@amgaec.fr">contact@amgaec.fr</a>
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-btn" title="Facebook">f</a>
+        <a href="#" class="social-btn" title="LinkedIn">in</a>
+        <a href="#" class="social-btn" title="Twitter">𝕏</a>
+      </div>
+    </div>
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2024 AMG AEC. Tous droits réservés.</p>
+    <p>
+      &copy; 2024 AMG AEC. Tous droits réservés. | <a href="#">Mentions légales</a> |
+      <a href="#">Politique de confidentialité</a>
+    </p>
   </div>
 </footer>

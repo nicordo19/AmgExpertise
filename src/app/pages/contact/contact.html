@@ -11,10 +11,10 @@
         <form class="contact-form" (ngSubmit)="submitForm()">
           <div class="form-group">
             <label for="name">Nom complet *</label>
-            <input 
-              type="text" 
-              id="name" 
-              [(ngModel)]="formData.name" 
+            <input
+              type="text"
+              id="name"
+              [(ngModel)]="formData.name"
               name="name"
               required
               placeholder="Votre nom"
@@ -23,10 +23,10 @@
 
           <div class="form-group">
             <label for="email">Email *</label>
-            <input 
-              type="email" 
-              id="email" 
-              [(ngModel)]="formData.email" 
+            <input
+              type="email"
+              id="email"
+              [(ngModel)]="formData.email"
               name="email"
               required
               placeholder="votre@email.com"
@@ -35,10 +35,10 @@
 
           <div class="form-group">
             <label for="phone">Téléphone *</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              [(ngModel)]="formData.phone" 
+            <input
+              type="tel"
+              id="phone"
+              [(ngModel)]="formData.phone"
               name="phone"
               required
               placeholder="06 XX XX XX XX"
@@ -47,10 +47,10 @@
 
           <div class="form-group">
             <label for="subject">Sujet *</label>
-            <input 
-              type="text" 
-              id="subject" 
-              [(ngModel)]="formData.subject" 
+            <input
+              type="text"
+              id="subject"
+              [(ngModel)]="formData.subject"
               name="subject"
               required
               placeholder="Objet de votre demande"
@@ -59,9 +59,9 @@
 
           <div class="form-group">
             <label for="message">Message *</label>
-            <textarea 
-              id="message" 
-              [(ngModel)]="formData.message" 
+            <textarea
+              id="message"
+              [(ngModel)]="formData.message"
               name="message"
               required
               placeholder="Décrivez votre demande en détail..."
@@ -75,7 +75,7 @@
 
       <section class="contact-info-section">
         <h2>Informations de contact</h2>
-        
+
         <div class="info-card">
           <h4>📞 Par téléphone</h4>
           <p>Appelez-nous directement pour une consultation rapide</p>
@@ -88,17 +88,7 @@
           <p class="info-value">Email à afficher</p>
         </div>
 
-        <div class="info-card">
-          <h4>🏢 Adresse</h4>
-          <p>Visitez-nous dans l'un de nos bureaux</p>
-          <p class="info-value">Adresse à afficher</p>
-        </div>
-
-        <div class="info-card">
-          <h4>⏰ Horaires</h4>
-          <p>Lundi au vendredi: 8h00 - 18h00</p>
-          <p>Samedi: Sur rendez-vous</p>
-        </div>
+        <a routerLink="/nos-bureaux" class="submit-button">Voir nos bureaux</a>
       </section>
     </div>
 
@@ -111,7 +101,9 @@
         </div>
         <div class="faq-item">
           <h4>Pouvez-vous vous déplacer?</h4>
-          <p>Oui, nous nous déplaçons dans tous nos zones de couverture pour les expertises sur site.</p>
+          <p>
+            Oui, nous nous déplaçons dans tous nos zones de couverture pour les expertises sur site.
+          </p>
         </div>
         <div class="faq-item">
           <h4>Quel est le tarif?</h4>
