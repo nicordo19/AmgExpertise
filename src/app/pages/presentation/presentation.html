@@ -3,30 +3,239 @@
     <h1>À propos de nous</h1>
   </div>
 
+  <!-- Tabs Navigation -->
+  <div class="tabs-navigation">
+    <button
+      class="tab-button"
+      [class.active]="activeTab() === 'about'"
+      (click)="setActiveTab('about')"
+    >
+      À propos
+    </button>
+    <button
+      class="tab-button"
+      [class.active]="activeTab() === 'teams'"
+      (click)="setActiveTab('teams')"
+    >
+      Nos équipes
+    </button>
+  </div>
+
   <div class="page-content">
-    <section class="about-section">
-      <h2>Notre Histoire</h2>
-      <p>
-        Les sociétés AMG AEC ont été créées en 2004 et affichent plus de vingt années d'expérience
-        en matière d'expertise automobile.
-      </p>
-    </section>
+    <!-- À PROPOS TAB -->
+    <div *ngIf="activeTab() === 'about'" class="tab-content">
+      <section class="about-section">
+        <h2>Notre Histoire</h2>
+        <p>
+          Les sociétés AMG AEC ont été créées en 2004 et affichent plus de vingt années d'expérience
+          en matière d'expertise automobile.
+        </p>
+      </section>
 
-    <section class="about-section">
-      <h2>Notre Structure</h2>
-      <p>
-        Le cabinet est composé de 20 experts et 15 assistants. Le cabinet est équipé des dernières
-        technologies en matière d'expertise (tablette pc, chiffrage embarqué dans vehicule,
-        expertise à distance, etc...).
-      </p>
-    </section>
+      <section class="about-section">
+        <h2>Notre Structure</h2>
+        <p>
+          Le cabinet est composé de 20 experts et 15 assistants. Le cabinet est équipé des dernières
+          technologies en matière d'expertise (tablette pc, chiffrage embarqué dans vehicule,
+          expertise à distance, etc...).
+        </p>
+      </section>
 
-    <section class="about-section">
-      <h2>Nos Sociétés d'Assurance Partenaires</h2>
-      <p>
-        Nous travaillons avec de nombreuses compagnies d'assurance sur tout le territoire français
-        et au Luxembourg.
-      </p>
-    </section>
+      <section class="about-section">
+        <h2>Nos Sociétés d'Assurance Partenaires</h2>
+        <p>
+          Nous travaillons avec de nombreuses compagnies d'assurance sur tout le territoire français
+          et au Luxembourg.
+        </p>
+      </section>
+    </div>
+
+    <!-- NOS ÉQUIPES TAB -->
+    <div *ngIf="activeTab() === 'teams'" class="tab-content">
+      <section class="teams-section">
+        <h2>Nos Équipes</h2>
+        <p class="teams-intro">
+          Découvrez les experts et les assistants qui font la force d'AMG AEC
+        </p>
+
+        <!-- Experts AMG -->
+        <div class="team-category">
+          <h3 class="category-title">Experts AMG AEC</h3>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="card-avatar">CG</div>
+              <h4>Christophe Gallois</h4>
+              <p class="role">Expert dirigeant AMG AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">LF</div>
+              <h4>Laurent Fournier</h4>
+              <p class="role">Expert dirigeant AMG AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">AC</div>
+              <h4>Arnaud Claudel</h4>
+              <p class="role">Expert dirigeant AMG AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">JT</div>
+              <h4>Jordan Thiery</h4>
+              <p class="role">Expert responsable AMG Thionville</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">FP</div>
+              <h4>Florian Portmann</h4>
+              <p class="role">Expert AMG</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">ED</div>
+              <h4>Evan Detomaso</h4>
+              <p class="role">Expert AMG</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">FM</div>
+              <h4>Francis Messenich</h4>
+              <p class="role">Expert AMG</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">XL</div>
+              <h4>Xavier Laffitte</h4>
+              <p class="role">Expert AMG</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">CM</div>
+              <h4>Christophe Malecki</h4>
+              <p class="role">Expert AMG</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">JR</div>
+              <h4>Julie Rossignon</h4>
+              <p class="role">Technicienne EAD AMG</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experts AEC -->
+        <div class="team-category">
+          <h3 class="category-title">Experts AEC</h3>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="card-avatar">TC</div>
+              <h4>Tony Corvisier</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">VR</div>
+              <h4>Valentin Rocher</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">VDM</div>
+              <h4>Vincenzo Di Mirco</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">TD</div>
+              <h4>Thomas Duchene</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">SG</div>
+              <h4>Sebastien Georgel</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">JP</div>
+              <h4>Jerome Petit</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">JOP</div>
+              <h4>Joey Poirot</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">AE</div>
+              <h4>Arnaud Erraes</h4>
+              <p class="role">Expert AEC</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assistants -->
+        <div class="team-category">
+          <h3 class="category-title">Assistants administratifs</h3>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="card-avatar">CB</div>
+              <h4>Cécile Brunette</h4>
+              <p class="role">Responsable administrative AMG AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">CH</div>
+              <h4>Christine Hamen</h4>
+              <p class="role">Responsable administrative AMG</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">NG</div>
+              <h4>Nathalie Guerin</h4>
+              <p class="role">Assistante administrative AMG AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">LC</div>
+              <h4>Lorène Closse</h4>
+              <p class="role">Assistante administrative AMG AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">EB</div>
+              <h4>Elise Bellec</h4>
+              <p class="role">Assistante administrative AMG AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">CL</div>
+              <h4>Carole Liber</h4>
+              <p class="role">Assistante administrative AMG</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">CR</div>
+              <h4>Crystal Rusa</h4>
+              <p class="role">Assistante administrative AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">AR</div>
+              <h4>Aline Ruse</h4>
+              <p class="role">Assistante administrative AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">YM</div>
+              <h4>Yoann Moisan</h4>
+              <p class="role">Assistant administratif AEC</p>
+            </div>
+            <div class="team-card">
+              <div class="card-avatar">AC</div>
+              <h4>Aurélie Czapracki</h4>
+              <p class="role">Assistante administrative AEC</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mascottes -->
+        <div class="team-category mascots-category">
+          <h3 class="category-title">Nos Mascottes</h3>
+          <div class="team-grid">
+            <div class="team-card mascot-card">
+              <div class="card-mascot">🐕</div>
+              <h4>Looper</h4>
+              <p class="role">Mascotte officielle</p>
+            </div>
+            <div class="team-card mascot-card">
+              <div class="card-mascot">🐕</div>
+              <h4>Cooky</h4>
+              <p class="role">Mascotte officielle</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </div>
