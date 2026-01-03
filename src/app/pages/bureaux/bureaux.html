@@ -21,61 +21,80 @@
     <section class="offices-section">
       <div class="offices-grid">
         @for (office of offices; track office.name) {
-          <div class="office-card" (click)="openGallery(office)" [class.clickable]="office.photos.length > 0">
-            <div class="office-image">
-              @if (office.photos.length > 0) {
-                <img [src]="getPhotoPath(office, office.photos[0])" [alt]="office.name" />
-              } @else {
-                <div class="office-placeholder">🏢</div>
-              }
-            </div>
-            <h3>{{ office.name }}</h3>
-            <ul class="office-info">
-              <p>{{ office.address }}</p>
-              <p>{{ office.city }}</p>
-              <p>Tel : {{ office.phone }}</p>
-            </ul>
+        <div
+          class="office-card"
+          (click)="openGallery(office)"
+          [class.clickable]="office.photos.length > 0"
+        >
+          <div class="office-image">
+            @if (office.photos.length > 0) {
+            <img [src]="getPhotoPath(office, office.photos[0])" [alt]="office.name" />
+            } @else {
+            <div class="office-placeholder">🏢</div>
+            }
           </div>
+          <h3>{{ office.name }}</h3>
+          <ul class="office-info">
+            <p>{{ office.address }}</p>
+            <p>{{ office.city }}</p>
+            <p>Tel : {{ office.phone }}</p>
+          </ul>
+        </div>
         }
       </div>
     </section>
 
     <!-- Modal Gallery -->
     @if (showModal()) {
-      <div class="modal-overlay" (click)="closeGallery()">
-        <div class="modal-content" (click)="$event.stopPropagation()">
-          <button class="modal-close" (click)="closeGallery()">✕</button>
-          
-          @if (selectedOffice(); as office) {
-            <h2>{{ office.name }}</h2>
-            
-            <div class="gallery-container">
-              <button class="gallery-nav prev" (click)="prevPhoto()" [disabled]="currentPhotoIndex() === 0">❮</button>
-              
-              <div class="gallery-image">
-                <img [src]="getPhotoPath(office, office.photos[currentPhotoIndex()])" [alt]="office.name" />
-              </div>
-              
-              <button class="gallery-nav next" (click)="nextPhoto()" [disabled]="currentPhotoIndex() === office.photos.length - 1">❯</button>
-            </div>
-            
-            <div class="gallery-counter">
-              {{ currentPhotoIndex() + 1 }} / {{ office.photos.length }}
-            </div>
-            
-            <div class="gallery-thumbnails">
-              @for (photo of office.photos; track photo; let i = $index) {
-                <img 
-                  [src]="getPhotoPath(office, photo)" 
-                  [alt]="office.name"
-                  [class.active]="i === currentPhotoIndex()"
-                  (click)="currentPhotoIndex.set(i)"
-                />
-              }
-            </div>
+    <div class="modal-overlay" (click)="closeGallery()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="modal-close" (click)="closeGallery()">✕</button>
+
+        @if (selectedOffice(); as office) {
+        <h2>{{ office.name }}</h2>
+
+        <div class="gallery-container">
+          <button
+            class="gallery-nav prev"
+            (click)="prevPhoto()"
+            [disabled]="currentPhotoIndex() === 0"
+          >
+            ❮
+          </button>
+
+          <div class="gallery-image">
+            <img
+              [src]="getPhotoPath(office, office.photos[currentPhotoIndex()])"
+              [alt]="office.name"
+            />
+          </div>
+
+          <button
+            class="gallery-nav next"
+            (click)="nextPhoto()"
+            [disabled]="currentPhotoIndex() === office.photos.length - 1"
+          >
+            ❯
+          </button>
+        </div>
+
+        <div class="gallery-counter">
+          {{ currentPhotoIndex() + 1 }} / {{ office.photos.length }}
+        </div>
+
+        <div class="gallery-thumbnails">
+          @for (photo of office.photos; track photo; let i = $index) {
+          <img
+            [src]="getPhotoPath(office, photo)"
+            [alt]="office.name"
+            [class.active]="i === currentPhotoIndex()"
+            (click)="currentPhotoIndex.set(i)"
+          />
           }
         </div>
+        }
       </div>
+    </div>
     }
   </div>
 </div>

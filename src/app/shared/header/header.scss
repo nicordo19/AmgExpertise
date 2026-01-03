@@ -35,6 +35,16 @@
     font-weight: 700;
     letter-spacing: -0.5px;
     color: white;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      letter-spacing: -0.3px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+      letter-spacing: -0.2px;
+    }
   }
 
   .tagline {
@@ -44,6 +54,16 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.85);
+
+    @media (max-width: 768px) {
+      font-size: 0.6rem;
+      letter-spacing: 1.5px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.55rem;
+      letter-spacing: 1px;
+    }
   }
 }
 
@@ -152,7 +172,7 @@
 
 .nav-mobile {
   display: none;
-  background-color: var(--primary-color);
+  background-color: #202f70;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
