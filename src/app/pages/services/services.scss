@@ -37,6 +37,58 @@
     padding: 2rem 1rem;
   }
 
+  .cta-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    letter-spacing: 0.5px;
+
+    &.button-light {
+      background-color: var(--secondary-color);
+      color: white;
+
+      &:hover {
+        background-color: #a00824;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    max-width: 800px;
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+
   h2 {
     color: var(--primary-color);
     font-size: 2rem;
@@ -207,15 +259,20 @@
     padding: 2rem;
     text-align: center;
     transition: var(--transition);
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
 
     .contact-icon {
       font-size: 3rem;
       margin-bottom: 1rem;
+      transition: transform 0.3s ease;
     }
 
     h4 {
       color: var(--primary-color);
       margin: 1rem 0;
+      transition: color 0.3s ease;
     }
 
     p {
@@ -224,8 +281,17 @@
     }
 
     &:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       transform: translateY(-4px);
+      border-color: var(--secondary-color);
+
+      .contact-icon {
+        transform: scale(1.2);
+      }
+
+      h4 {
+        color: var(--secondary-color);
+      }
     }
   }
 }

@@ -114,11 +114,21 @@
 }
 
 .about-section {
-  margin-bottom: 3rem;
   animation: fadeInUp 0.6s ease-out;
 
   @media (max-width: 768px) {
     margin-bottom: 2rem;
+  }
+
+  .video-container {
+    margin-bottom: 2rem;
+
+    video {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
   }
 
   h2 {
@@ -139,6 +149,14 @@
     line-height: 1.8;
     color: #333;
     margin: 0 0 1rem 0;
+  }
+
+  ul {
+    margin-left: 2rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
@@ -341,6 +359,21 @@
     width: 85px;
     height: 85px;
     font-size: 2.5rem;
+  }
+}
+
+.card-mascot-img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(244, 63, 94, 0.3);
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    width: 85px;
+    height: 85px;
   }
 }
 

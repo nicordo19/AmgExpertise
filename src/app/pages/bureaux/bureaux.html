@@ -20,84 +20,62 @@
 
     <section class="offices-section">
       <div class="offices-grid">
-        <div class="office-card">
-          <div class="office-image">🏢</div>
-          <h3>AMG Expertise</h3>
-          <ul class="office-info">
-            <p>1, Allée de la Chapelle</p>
-            <p>57530 Ars-Laquenexy</p>
-            <p>Tel : 03.87.51.13.53</p>
-            <p>Fax : 03.87.30.40.72</p>
-            <p>Horaires d'ouverture : 8h30-12h/14h-17h</p>
-          </ul>
-        </div>
-        <div class="office-card">
-          <div class="office-image">🏢</div>
-          <h3>AMG Thionville</h3>
-          <ul class="office-info">
-            <p>4, Place Alain Gérard</p>
-            <p>57100 Thionville</p>
-            <p>Tel : 03.82.88.23.94</p>
-            <p>Fax : 03.87.30.40.72</p>
-            <p>Horaires d'ouverture : 8h30-12h/14h-17h</p>
-          </ul>
-        </div>
-        <div class="office-card">
-          <div class="office-image">🏢</div>
-          <h3>AMG Strasbourg</h3>
-          <ul class="office-info">
-            <p>5 rue du Cerf Bon</p>
-            <p>67100 Strasbourg</p>
-            <p>Tel : 03.88.34.72.80</p>
-            <p>Fax : (00352)26.89.72.76</p>
-            <p>Horaires d'ouverture : 8h30-12h/14h-17h</p>
-          </ul>
-        </div>
-        <div class="office-card">
-          <div class="office-image">🏢</div>
-          <h3>AMG EXPERTISE LUX</h3>
-          <ul class="office-info">
-            <p>67 rue Michel Weiler</p>
-            <p>L2730 Luxembourg</p>
-            <p>Tel : (00352)26.10.25.57</p>
-            <p>Fax : (00352)26.89.72.76</p>
-            <p>Horaires d'ouverture : 8h30-12h/14h-17h</p>
-          </ul>
-        </div>
-        <div class="office-card">
-          <div class="office-image">🏢</div>
-          <h3>AMG EXPERTISE</h3>
-          <ul class="office-info">
-            <p>18 avenue du Général de Gaulle</p>
-            <p>55100 Verdun</p>
-            <p>Tel : 03.29.86.10.15</p>
-            <p>Fax : 03.29.86.56.03</p>
-            <p>Horaires d'ouverture : 8h30-12h/14h-17h</p>
-          </ul>
-        </div>
-        <div class="office-card">
-          <div class="office-image">🏢</div>
-          <h3>AEC Nancy</h3>
-          <ul class="office-info">
-            <p>2 rue du Bois de la Chapelle</p>
-            <p>54500 Vandoeuvre-les-Nancy</p>
-            <p>Tel : 03.83.49.59.20</p>
-            <p>Fax : /</p>
-            <p>Horaires d'ouverture : 8h30-12h/14h-17h</p>
-          </ul>
-        </div>
-        <div class="office-card">
-          <div class="office-image">🏢</div>
-          <h3>AEC Epinal</h3>
-          <ul class="office-info">
-            <p>2 rue Hausmatte</p>
-            <p>68190 Soultz</p>
-            <p>Tel : 03.29.81.42.42</p>
-            <p>Fax : 03.29.31.95.63</p>
-            <p>Horaires d'ouverture : 8h30-12h/14h-17h</p>
-          </ul>
-        </div>
+        @for (office of offices; track office.name) {
+          <div class="office-card" (click)="openGallery(office)" [class.clickable]="office.photos.length > 0">
+            <div class="office-image">
+              @if (office.photos.length > 0) {
+                <img [src]="getPhotoPath(office, office.photos[0])" [alt]="office.name" />
+              } @else {
+                <div class="office-placeholder">🏢</div>
+              }
+            </div>
+            <h3>{{ office.name }}</h3>
+            <ul class="office-info">
+              <p>{{ office.address }}</p>
+              <p>{{ office.city }}</p>
+              <p>Tel : {{ office.phone }}</p>
+            </ul>
+          </div>
+        }
       </div>
     </section>
+
+    <!-- Modal Gallery -->
+    @if (showModal()) {
+      <div class="modal-overlay" (click)="closeGallery()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <button class="modal-close" (click)="closeGallery()">✕</button>
+          
+          @if (selectedOffice(); as office) {
+            <h2>{{ office.name }}</h2>
+            
+            <div class="gallery-container">
+              <button class="gallery-nav prev" (click)="prevPhoto()" [disabled]="currentPhotoIndex() === 0">❮</button>
+              
+              <div class="gallery-image">
+                <img [src]="getPhotoPath(office, office.photos[currentPhotoIndex()])" [alt]="office.name" />
+              </div>
+              
+              <button class="gallery-nav next" (click)="nextPhoto()" [disabled]="currentPhotoIndex() === office.photos.length - 1">❯</button>
+            </div>
+            
+            <div class="gallery-counter">
+              {{ currentPhotoIndex() + 1 }} / {{ office.photos.length }}
+            </div>
+            
+            <div class="gallery-thumbnails">
+              @for (photo of office.photos; track photo; let i = $index) {
+                <img 
+                  [src]="getPhotoPath(office, photo)" 
+                  [alt]="office.name"
+                  [class.active]="i === currentPhotoIndex()"
+                  (click)="currentPhotoIndex.set(i)"
+                />
+              }
+            </div>
+          }
+        </div>
+      </div>
+    }
   </div>
 </div>
