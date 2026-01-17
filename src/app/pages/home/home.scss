@@ -9,16 +9,36 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #202f70 0%, #202f70 100%);
+  position: relative;
+  background-image: url('/IMG amg-expertise/photo-Couverture/photo-couverture.jpg');
+  background-size: cover;
+  background-position: center 70%;
+  background-repeat: no-repeat;
   color: white;
-  padding: 6rem 2rem;
+  padding: 14rem 2rem;
   text-align: center;
+  min-height: 750px;
+
+  // Overlay sombre pour la lisibilité du texte
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #202f7092 0%, #202f709c 100%);
+    z-index: 1;
+  }
 
   @media (max-width: 768px) {
-    padding: 3rem 1rem;
+    padding: 6rem 1rem;
+    min-height: 500px;
   }
 
   .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
     margin: 0 auto;
 
@@ -91,13 +111,59 @@
 
   h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     font-size: 2rem;
     color: var(--primary-color);
 
     @media (max-width: 768px) {
       font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .recruitment-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
       margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .recruitment-cta {
+    text-align: center;
+
+    .button {
+      display: inline-block;
+      padding: 1rem 3rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      font-size: 1.1rem;
+
+      @media (max-width: 768px) {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
+    }
+
+    .button-primary {
+      background-color: var(--secondary-color);
+      color: white;
+
+      &:hover {
+        background-color: #a00824;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(200, 16, 46, 0.3);
+      }
     }
   }
 
@@ -266,10 +332,18 @@
     padding: 2rem;
     text-align: center;
     transition: var(--transition);
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
 
     .service-icon {
       font-size: 3rem;
       margin-bottom: 1rem;
+
+      svg {
+        fill: #202f70;
+        opacity: 0.95;
+      }
     }
 
     h3 {

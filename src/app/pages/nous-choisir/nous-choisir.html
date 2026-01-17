@@ -8,7 +8,21 @@
       <h2>Nos valeurs</h2>
       <div class="advantages-grid">
         <div class="advantage-card">
-          <div class="advantage-icon">🎯</div>
+          <div class="advantage-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
           <h3>Expertise Reconnue</h3>
           <p>
             Depuis 2004, nous mettons à profit plus de 20 ans d'expérience dans l'expertise
@@ -16,27 +30,100 @@
           </p>
         </div>
         <div class="advantage-card">
-          <div class="advantage-icon">⚡</div>
+          <div class="advantage-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
           <h3>Réactivité</h3>
           <p>Réponse rapide à vos demandes et interventions dans les meilleurs délais</p>
         </div>
         <div class="advantage-card">
-          <div class="advantage-icon">🌍</div>
+          <div class="advantage-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              />
+            </svg>
+          </div>
           <h3>Présence Régionale</h3>
           <p>Couverture complète de 7 départements de l'Est de la France et du Luxembourg</p>
         </div>
         <div class="advantage-card">
-          <div class="advantage-icon">👥</div>
+          <div class="advantage-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
           <h3>Équipe Qualifiée</h3>
           <p>Experts automobiles qualifiés et expérimentés à votre service</p>
         </div>
         <div class="advantage-card">
-          <div class="advantage-icon">📊</div>
+          <div class="advantage-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+          </div>
           <h3>Rapports Détaillés</h3>
           <p>Documentation complète et professionnelle pour chaque expertise</p>
         </div>
         <div class="advantage-card">
-          <div class="advantage-icon">🔒</div>
+          <div class="advantage-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"
+              />
+            </svg>
+          </div>
           <h3>Transparence</h3>
           <p>Communication claire et honnête tout au long du processus</p>
         </div>
@@ -47,19 +134,62 @@
       <h2>Ce que nos clients disent</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>"Une réponse très rapide, une expertise très professionnelle"</p>
+          <div class="stars">
+            <svg
+              *ngFor="let star of stars"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p>
+            Très bonne prise en charge de mon dossier par le cabinet. Suivi du dossier et obtention
+            d'une prise en charge à 100% par le constructeur. Merci à M. COLLELA Antonio pour les
+            différents échanges et la résolution rapide de ce litige automobile
+          </p>
           <p class="client-name">— Un particulier</p>
         </div>
         <div class="testimonial-card">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>"Service de qualité, experts compétents et disponibles"</p>
-          <p class="client-name">— Un client satisfait</p>
+          <div class="stars">
+            <svg
+              *ngFor="let star of stars"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p>
+            Une très bonne expérience, un compte rendu d’expert juste et des réponses toujours
+            adaptées à mes demandes (nombreuses) par téléphone. Merci pour votre aide.
+          </p>
+          <p class="client-name">— Un particulier</p>
         </div>
         <div class="testimonial-card">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <p>"La meilleure expertise automobile que j'ai jamais eu"</p>
-          <p class="client-name">— Un autre client</p>
+          <div class="stars">
+            <svg
+              *ngFor="let star of stars"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+          </div>
+          <p>
+            Expertise rapide, cohérente et surtout l’expert prend le temps de vous appeler ! Un
+            grand merci à M. Fournier.
+          </p>
+          <p class="client-name">— Un particulier</p>
         </div>
       </div>
     </section>

@@ -25,6 +25,11 @@
   cursor: pointer;
   transition: transform 0.3s ease;
 
+  @media (max-width: 768px) {
+    align-items: flex-start;
+    padding-left: 0;
+  }
+
   &:hover {
     transform: translateY(-2px);
   }
@@ -37,6 +42,7 @@
     color: white;
 
     @media (max-width: 768px) {
+<<<<<<< HEAD
       font-size: 1.1rem;
       letter-spacing: -0.3px;
     }
@@ -44,6 +50,10 @@
     @media (max-width: 480px) {
       font-size: 0.95rem;
       letter-spacing: -0.2px;
+=======
+      font-size: 1.3rem;
+      text-align: left;
+>>>>>>> test
     }
   }
 
@@ -56,6 +66,7 @@
     color: rgba(255, 255, 255, 0.85);
 
     @media (max-width: 768px) {
+<<<<<<< HEAD
       font-size: 0.6rem;
       letter-spacing: 1.5px;
     }
@@ -63,6 +74,10 @@
     @media (max-width: 480px) {
       font-size: 0.55rem;
       letter-spacing: 1px;
+=======
+      text-align: left;
+      font-size: 0.65rem;
+>>>>>>> test
     }
   }
 }
@@ -172,7 +187,11 @@
 
 .nav-mobile {
   display: none;
+<<<<<<< HEAD
   background-color: #202f70;
+=======
+  background: linear-gradient(135deg, #202f70 0%, #202f70 100%);
+>>>>>>> test
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;

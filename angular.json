@@ -42,7 +42,11 @@
                 },
                 {
                   "type": "anyComponentStyle",
+<<<<<<< HEAD
                   "maximumWarning": "6kB",
+=======
+                  "maximumWarning": "8kB",
+>>>>>>> test
                   "maximumError": "12kB"
                 }
               ],
