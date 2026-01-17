@@ -9,16 +9,36 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #202f70 0%, #202f70 100%);
+  position: relative;
+  background-image: url('/IMG amg-expertise/photo-Couverture/photo-couverture.jpg');
+  background-size: cover;
+  background-position: center 70%;
+  background-repeat: no-repeat;
   color: white;
-  padding: 6rem 2rem;
+  padding: 14rem 2rem;
   text-align: center;
+  min-height: 750px;
+
+  // Overlay sombre pour la lisibilité du texte
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #202f7092 0%, #202f709c 100%);
+    z-index: 1;
+  }
 
   @media (max-width: 768px) {
-    padding: 3rem 1rem;
+    padding: 6rem 1rem;
+    min-height: 500px;
   }
 
   .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
     margin: 0 auto;
 
