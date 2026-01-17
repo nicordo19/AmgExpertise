@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nous-choisir',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './nous-choisir.html',
-  styleUrl: './nous-choisir.scss'
+  styleUrl: './nous-choisir.scss',
 })
 export class NousChoisirComponent {
+  stars = [1, 2, 3, 4, 5];
 }

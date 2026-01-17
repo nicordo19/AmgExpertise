@@ -1,0 +1,33 @@
+<div class="assurances-partenaires">
+  <div class="container">
+    <div class="slider-container">
+      <div class="slider-track">
+        @for (insurance of insurances; track insurance.name) {
+          <div class="insurance-item">
+            <div class="insurance-logo">
+              <img
+                [src]="'/logos-assurances/' + insurance.logo"
+                [alt]="insurance.name"
+                [class.logo-ca]="insurance.name === 'CA Assurance'"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        }
+        <!-- Duplication pour un défilement continu -->
+        @for (insurance of insurances; track insurance.name + '-duplicate') {
+          <div class="insurance-item">
+            <div class="insurance-logo">
+              <img
+                [src]="'/logos-assurances/' + insurance.logo"
+                [alt]="insurance.name"
+                [class.logo-ca]="insurance.name === 'CA Assurance'"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,13 +25,6 @@
     <!-- À PROPOS TAB -->
     <div *ngIf="activeTab() === 'about'" class="tab-content">
       <section class="about-section">
-        <div class="video-container">
-          <video controls>
-            <source src="IMG amg-expertise/amg-video1.mp4" type="video/mp4" />
-            Votre navigateur ne supporte pas la lecture de vidéos.
-          </video>
-        </div>
-
         <h2>Notre Histoire</h2>
         <p>
           Expert Groupe Nord Est est né d’une volonté forte : réinventer l’expertise automobile dans
@@ -52,7 +45,7 @@
         <br />
         <p>
           Aujourd’hui, le groupe couvre 12 départements du Grand Est et poursuit son développement
-          avec l’ouverture de nouveaux bureaux, notamment à Reims.
+          avec l’ouverture de nouveaux bureaux.
         </p>
         <br />
       </section>
@@ -110,72 +103,19 @@
       <section class="teams-section">
         <h2>Nos Équipes</h2>
         <p class="teams-intro">
-          Découvrez les experts et les assistants qui font la force d'AMG AEC
+          Découvrez les experts, les assistants et les techniciens qui font la force d'Experts
+          Groupe Nord Est.
         </p>
 
         <!-- Experts AMG -->
         <div class="team-category">
           <h3 class="category-title">Dirigeants</h3>
           <div class="team-grid">
-            <div class="team-card">
-              <div class="card-avatar">CG</div>
-              <h4>Christophe Gallois</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">LF</div>
-              <h4>Laurent Fournier</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">AC</div>
-              <h4>Arnaud Claudel</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">JT</div>
-              <h4>Jordan Thiery</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">FP</div>
-              <h4>Florian Portmann</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">ED</div>
-              <h4>Evan Detomaso</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">FM</div>
-              <h4>Francis Messenich</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">XL</div>
-              <h4>Xavier Laffitte</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">CM</div>
-              <h4>Christophe Malecki</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">JR</div>
-              <h4>Julie Rossignon</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
+            <div class="team-card" *ngFor="let member of getDirigeants()">
+              <div class="card-avatar">{{ member.initiales }}</div>
+              <h4>{{ member.prenom }} {{ member.nom }}</h4>
+              <p class="role">{{ member.qualite }}</p>
+              <p class="role">{{ member.specialite }}</p>
             </div>
           </div>
         </div>
@@ -184,120 +124,37 @@
         <div class="team-category">
           <h3 class="category-title">Experts</h3>
           <div class="team-grid">
-            <div class="team-card">
-              <div class="card-avatar">TC</div>
-              <h4>Tony Corvisier</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
+            <div class="team-card" *ngFor="let member of getExperts()">
+              <div class="card-avatar">{{ member.initiales }}</div>
+              <h4>{{ member.prenom }} {{ member.nom }}</h4>
+              <p class="role">{{ member.qualite }}</p>
+              <p class="role">{{ member.specialite }}</p>
             </div>
-            <div class="team-card">
-              <div class="card-avatar">VR</div>
-              <h4>Valentin Rocher</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">VDM</div>
-              <h4>Vincenzo Di Mirco</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">TD</div>
-              <h4>Thomas Duchene</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">SG</div>
-              <h4>Sebastien Georgel</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">JP</div>
-              <h4>Jerome Petit</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">JOP</div>
-              <h4>Joey Poirot</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">AE</div>
-              <h4>Arnaud Erraes</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
+          </div>
+        </div>
+
+        <!-- Techniciens -->
+        <div class="team-category">
+          <h3 class="category-title">Techniciens</h3>
+          <div class="team-grid">
+            <div class="team-card" *ngFor="let member of getTechniciens()">
+              <div class="card-avatar">{{ member.initiales }}</div>
+              <h4>{{ member.prenom }} {{ member.nom }}</h4>
+              <p class="role">{{ member.qualite }}</p>
+              <p class="role">{{ member.specialite }}</p>
             </div>
           </div>
         </div>
 
         <!-- Assistants -->
         <div class="team-category">
-          <h3 class="category-title">Assistants administratifs</h3>
+          <h3 class="category-title">Administratifs</h3>
           <div class="team-grid">
-            <div class="team-card">
-              <div class="card-avatar">CB</div>
-              <h4>Cécile Brunette</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">CH</div>
-              <h4>Christine Hamen</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">NG</div>
-              <h4>Nathalie Guerin</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">LC</div>
-              <h4>Lorène Closse</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">EB</div>
-              <h4>Elise Bellec</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">CL</div>
-              <h4>Carole Liber</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">CR</div>
-              <h4>Crystal Rusa</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">AR</div>
-              <h4>Aline Ruse</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">YM</div>
-              <h4>Yoann Moisan</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
-            </div>
-            <div class="team-card">
-              <div class="card-avatar">AC</div>
-              <h4>Aurélie Czapracki</h4>
-              <p class="role">Fonction</p>
-              <p class="role">Spécialité</p>
+            <div class="team-card" *ngFor="let member of getAdministratifs()">
+              <div class="card-avatar">{{ member.initiales }}</div>
+              <h4>{{ member.prenom }} {{ member.nom }}</h4>
+              <p class="role">{{ member.qualite }}</p>
+              <p class="role">{{ member.specialite }}</p>
             </div>
           </div>
         </div>
@@ -312,12 +169,8 @@
               <p class="role">Mascotte officielle</p>
             </div>
             <div class="team-card mascot-card">
-              <img
-                src="IMG amg-expertise/Dog Smile GIF by MOODMAN.gif"
-                alt="Cooky"
-                class="card-mascot-img"
-              />
-              <h4>Cooky</h4>
+              <img src="IMG amg-expertise/gif-Uckie.gif" alt="Uckie" class="card-mascot-img" />
+              <h4>Uckie</h4>
               <p class="role">Mascotte officielle</p>
             </div>
           </div>

@@ -8,6 +8,16 @@
     <div class="contact-wrapper">
       <section class="contact-form-section">
         <h2>Formulaire de contact</h2>
+
+        <!-- Messages de succès/erreur -->
+        <div *ngIf="submitSuccess" class="alert alert-success">
+          ✅ Merci pour votre message! Nous vous recontacterons dans les meilleurs délais.
+        </div>
+
+        <div *ngIf="submitError" class="alert alert-error">
+          ❌ Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.
+        </div>
+
         <form class="contact-form" (ngSubmit)="submitForm()">
           <div class="form-group">
             <label for="name">Nom complet *</label>
@@ -69,7 +79,9 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="submit-button">Envoyer le message</button>
+          <button type="submit" class="submit-button" [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Envoi en cours...' : 'Envoyer le message' }}
+          </button>
         </form>
       </section>
 
@@ -79,41 +91,18 @@
         <div class="info-card">
           <h4>📞 Par téléphone</h4>
           <p>Appelez-nous directement pour une consultation rapide</p>
-          <p class="info-value">Numéro à afficher</p>
+          <p class="info-value">03 87 51 13 53</p>
         </div>
 
         <div class="info-card">
-          <h4>📧 Par email</h4>
+          <h4>📧 Par email ou via le formulaire de contact</h4>
           <p>Envoyez votre demande d'expertise</p>
-          <p class="info-value">Email à afficher</p>
+          <p>Candidatez spontanément pour rejoindre nos équipes</p>
+          <p class="info-value">nordest.amg@expertsgroupe.fr</p>
         </div>
 
         <a routerLink="/nos-bureaux" class="submit-button">Voir nos bureaux</a>
       </section>
     </div>
-
-    <section class="faq-section">
-      <h2>Questions fréquemment posées</h2>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <h4>Combien de temps pour une expertise?</h4>
-          <p>Une expertise standard prend généralement entre 1 et 3 heures selon la complexité.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Pouvez-vous vous déplacer?</h4>
-          <p>
-            Oui, nous nous déplaçons dans tous nos zones de couverture pour les expertises sur site.
-          </p>
-        </div>
-        <div class="faq-item">
-          <h4>Quel est le tarif?</h4>
-          <p>Les tarifs dépendent du type d'expertise. Contactez-nous pour un devis gratuit.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Avez-vous une garantie?</h4>
-          <p>Nos rapports d'expertise sont reconnus et acceptés par toutes les assurances.</p>
-        </div>
-      </div>
-    </section>
   </div>
 </div>
